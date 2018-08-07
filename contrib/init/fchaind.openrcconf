@@ -1,0 +1,26 @@
+# /etc/conf.d/fchaind: config file for /etc/init.d/fchaind
+
+# Config file location
+#BITCOIND_CONFIGFILE="/etc/fchain/fchain.conf"
+
+# What directory to write pidfile to?  (created and owned by $BITCOIND_USER)
+#BITCOIND_PIDDIR="/var/run/fchaind"
+
+# What filename to give the pidfile
+#BITCOIND_PIDFILE="${BITCOIND_PIDDIR}/fchaind.pid"
+
+# Where to write fchaind data (be mindful that the blockchain is large)
+#BITCOIND_DATADIR="/var/lib/fchaind"
+
+# User and group to own fchaind process
+#BITCOIND_USER="fchain"
+#BITCOIND_GROUP="fchain"
+
+# Path to fchaind executable
+#BITCOIND_BIN="/usr/bin/fchaind"
+
+# Nice value to run fchaind under
+#BITCOIND_NICE=0
+
+# Additional options (avoid -conf and -datadir, use flags above)
+BITCOIND_OPTS=""
