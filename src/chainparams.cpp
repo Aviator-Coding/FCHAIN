@@ -107,13 +107,13 @@ public:
         nToCheckBlockUpgradeMajority = 1000;
         nMinerThreads = 0;
         nTargetTimespan = 2 * 60; 
-        nTargetSpacing = 1 * 60;  // FChain: 1 minute blocks during POW (block 1-200)
+        nTargetSpacing = 1 * 60;  // FChain: 1 minute blocks during POW (block 1-1000)
         nMaturity = 5; // 6 block maturity (+1 elsewhere)
         nMasternodeCountDrift = 20;
         nMaxMoneyOut = 18500000 * COIN; // 18.5 million max supply
 
         /** Height or Time Based Activations **/
-        nLastPOWBlock = 200;
+        nLastPOWBlock = 1000;
         nModifierUpdateBlock = 1; // we use the version 2 for FCHAIN
 
         const char* pszTimestamp = "FCHAIN is alive - Aug 2018";
@@ -166,7 +166,7 @@ public:
 
         nPoolMaxTransactions = 3;
         strSporkKey = "04cc17389379a0e323f53ea504d38cd71f43dc22f597805fed33a51b05ced1a3ae0db84089985f351b3737721736a82f58c8bd529f79c8ffe57e922bda792146ab";
-        strMasternodePoolDummyAddress = "NSJVWUkt6HtSCY2SaJ2akeyJUg8bg1hW3S";
+        strMasternodePoolDummyAddress = "FSJVWUkt6HtSCY2SaJ2akeyJUg8bg1hW3S";
         nStartMasternodePayments = 4070908800; 
 
         nBudget_Fee_Confirmations = 6; // Number of confirmations for the finalization fee
