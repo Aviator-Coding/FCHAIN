@@ -77,7 +77,7 @@ bool fCheckBlockIndex = false;
 unsigned int nCoinCacheSize = 5000;
 bool fAlerts = DEFAULT_ALERTS;
 
-unsigned int nStakeMinAge = 60 * 60;
+unsigned int nStakeMinAge = 2 * 60 * 60;
 int64_t nReserveBalance = 0;
 
 /** Fees smaller than this (in ufchain) are considered zero fee (for relaying and mining)
@@ -1624,21 +1624,25 @@ int64_t GetBlockValue(int nHeight)
     }
 
     if (nHeight < Params().LAST_POW_BLOCK())
-        nSubsidy = 10000 * COIN;
-    else if (nHeight <= 30000)
-        nSubsidy = 5 * COIN;
-    else if (nHeight > 30000 && nHeight <= 200000)
-        nSubsidy = 3.75 * COIN;
-    else if (nHeight > 200000 && nHeight <= 500000)
-        nSubsidy = 2.5 * COIN;
-    else if (nHeight > 500000 && nHeight <= 900000)
-        nSubsidy = 1.25 * COIN;
-    else if (nHeight > 900000 && nHeight <= 1500000)
-        nSubsidy = 0.5 * COIN;
-    else if (nHeight > 1500000 && nHeight <= 6000000)
-        nSubsidy = 0.25 * COIN;
+        nSubsidy = 924 * COIN;  // 924,000 FCHAIN premined
+    else if (nHeight <= 11956)
+        nSubsidy = 6 * COIN;
+    else if (nHeight > 11956 && nHeight <= 22912)
+        nSubsidy = 8 * COIN;
+    else if (nHeight > 22912 && nHeight <= 44827)
+        nSubsidy = 10 * COIN;
+    else if (nHeight > 44827 && nHeight <= 66742)
+        nSubsidy = 8 * COIN;
+    else if (nHeight > 66742 && nHeight <= 88657)
+        nSubsidy = 6 * COIN;
+    else if (nHeight > 88657 && nHeight <= 110572)
+        nSubsidy = 4 * COIN;
+    else if (nHeight > 110572 && nHeight <= 2214412)
+        nSubsidy = 2 * COIN;
+    else if (nHeight > 2214412 && nHeight <= 14837452)
+        nSubsidy = 1 * COIN;
     else
-        nSubsidy = 0.125 * COIN;
+        nSubsidy = 1 * COIN;
 
     // Check if we reached the coin max supply.
     int64_t nMoneySupply = chainActive.Tip()->nMoneySupply;
@@ -1661,7 +1665,7 @@ int64_t GetMasternodePayment(int nHeight, int64_t blockValue, int nMasternodeCou
         return 0;
 
     // Check if we reached coin supply
-    ret = blockValue * 0.85; // 85% of block reward
+    ret = blockValue * 0.7; // 70% of block reward
 
     return ret;
 }
