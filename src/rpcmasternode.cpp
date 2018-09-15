@@ -255,6 +255,8 @@ UniValue listmasternodes(const UniValue& params, bool fHelp)
             std::string strNetwork = GetNetworkName(node.GetNetwork());
 
             obj.push_back(Pair("rank", (strStatus == "ENABLED" ? s.first : 0)));
+            obj.push_back(Pair("ip", strHost)); //Returns the Current Ip of the Masternode
+            obj.push_back(Pair("port", port)); //Returns the Current Port of the Masternode
             obj.push_back(Pair("network", strNetwork));
             obj.push_back(Pair("txhash", strTxHash));
             obj.push_back(Pair("outidx", (uint64_t)oIdx));
